@@ -1,13 +1,13 @@
-import './App.css'
+import "./App.css";
 
 function App() {
-  
-
   return (
     <>
-      <p className='text-red-700 font-bold text-3xl'>This is my react and tailwind css work environment</p>
+      <h1 className="text-5xl font-primary text-red-700 font-bold text-center p-20">
+        Hi, Developers!
+      </h1>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
