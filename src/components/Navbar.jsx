@@ -38,9 +38,10 @@ const Navbar = () => {
         <Link to="/" className="font-bold">Logo</Link>
 
         {/* menu items for desktop */}
-        <div>
+        <div className="hidden md:flex">
           <NavItems />
         </div>
+
 
         {/* cart items */}
         <div>Cart items</div>
