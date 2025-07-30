@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { FaShoppingBag } from "react-icons/fa";
+
 
 const navItems = () => [
   { path: "/", label: "Furnitures" },
@@ -44,7 +46,12 @@ const Navbar = () => {
 
 
         {/* cart items */}
-        <div>Cart items</div>
+        <div className="hidden md:block cursor-pointer relative">
+          <FaShoppingBag className="text-xl"/>
+          <sup className="absolute top-0 -right-3 bg-primary text-white w-5 h-5 rounded-full flex items-center justify-center text-xs">
+            0
+          </sup>
+        </div>
 
       </nav>
     </header>
