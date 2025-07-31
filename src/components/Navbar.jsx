@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaShoppingBag } from "react-icons/fa";
 import { FaBars } from "react-icons/fa6";
@@ -32,6 +32,13 @@ const NavItems = () => {
 
 
 const Navbar = () => {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () =>{
+    setIsMenuOpen (prevState =>!prevState)
+  }
+
   return (
     <header>
       <nav className="max-w-screen-1xl container mx-auto flex justify-between items-center py-6 px-6">
@@ -47,9 +54,15 @@ const Navbar = () => {
 
 
         {/* hamburger menu for mobile  */}
-        <div className="md:hidden text-xl cursor-pointer hover:text-primary">
-          <FaBars className="text-xl"/>
+        <div onClick={toggleMenu} className="md:hidden text-xl cursor-pointer hover:text-primary">
+          {
+            isMenuOpen ? null : <FaBars className="text-xl"/>
+          }
+          
         </div>
+
+
+
 
         {/* cart items */}
         <div className="hidden md:block cursor-pointer relative">
