@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaShoppingBag } from "react-icons/fa";
-
+import { FaBars } from "react-icons/fa6";
 
 const navItems = () => [
   { path: "/", label: "Furnitures" },
@@ -34,7 +34,7 @@ const NavItems = () => {
 const Navbar = () => {
   return (
     <header>
-      <nav className="max-w-screen-2xl container mx-auto flex justify-between items-center py-6 px-4">
+      <nav className="max-w-screen-1xl container mx-auto flex justify-between items-center py-6 px-6">
 
         {/* logo */}
         <Link to="/" className="font-bold">Logo</Link>
@@ -44,6 +44,12 @@ const Navbar = () => {
           <NavItems />
         </div>
 
+
+
+        {/* hamburger menu for mobile  */}
+        <div className="md:hidden text-xl cursor-pointer hover:text-primary">
+          <FaBars className="text-xl"/>
+        </div>
 
         {/* cart items */}
         <div className="hidden md:block cursor-pointer relative">
