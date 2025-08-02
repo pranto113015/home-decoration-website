@@ -34,19 +34,20 @@ const Hero = () => {
 
       {/* bottom blur effect */}
       <div className="absolute inset-x-0 bottom-0 h-3/4 -mb-2 bg-gradient-to-t from-white via-transparent to-transparent blur-sm"></div>
-    
-
-
 
       {/* hover button for diplaying tooltip box */}
-        <div className="hidden xl:block absolute bottom-23 left-15"> 
-          <Tooltipbutton position="bottom" />
-        </div>
-         <div className="hidden xl:block absolute top-40 left-24"> 
-          <Tooltipbutton position="top" />
-        </div>
-    
-    
+      <div className="hidden xl:block absolute bottom-23 left-15">
+        <Tooltipbutton position="bottom" />
+      </div>
+      <div className="hidden xl:block absolute bottom-33 left-65">
+        <Tooltipbutton position="bottom" />
+      </div>
+      <div className="hidden xl:block absolute bottom-23 right-[588px]">
+        <Tooltipbutton position="bottom" />
+      </div>
+      <div className="hidden xl:block absolute bottom-12 right-16">
+        <Tooltipbutton position="bottom" />
+      </div>
     </section>
   );
 };
