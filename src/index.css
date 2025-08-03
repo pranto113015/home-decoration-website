@@ -18,10 +18,10 @@
     max-width: 1536px; /* equivalent to max-w-screen-2xl */
     margin-left: auto; /* mx-auto */
     margin-right: auto;
-    padding-left: 1.5rem; /* px-6 */
-    padding-right: 1.5rem;
-    padding-top: 1.5rem; /* py-6 */
-    padding-bottom: 1.5rem;
+    padding-left: 2.5rem; /* px-6 */
+    padding-right: 2.5rem; /* px-6 */
+    padding-top: 2.5rem; /* py-6 */
+    padding-bottom: 2.5rem;
 }
 
 

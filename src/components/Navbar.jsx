@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaShoppingBag } from "react-icons/fa";
 import { FaBars } from "react-icons/fa6";
@@ -36,13 +36,33 @@ const NavItems = ({toggleMenu}) => {
 const Navbar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () =>{
     setIsMenuOpen (prev =>!prev);
   }
 
+  // when scroll apply bg-color to navbar
+  useEffect(()=>{
+    const handleScroll = ()=>{
+      if(window.scrollY > 50){
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () =>{
+      window.addEventListener('scroll', handleScroll);
+    }
+
+  },[isScrolled]);
+
+
+
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition duration-300 ease-in-out text-white`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition duration-300 ease-in-out ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent text-white'}`}>
       <nav className="max-w-screen-1xl container mx-auto flex justify-between items-center py-6 px-6">
 
         {/* logo */}
