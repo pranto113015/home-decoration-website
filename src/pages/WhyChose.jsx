@@ -11,7 +11,7 @@ const WhyChose = () => {
        <div>
         <h3>Luxury facilities</h3>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, fuga?</p>
-             <Button/>
+             <Button text="Learn More"/>
        </div>
     </div>
       </div>
