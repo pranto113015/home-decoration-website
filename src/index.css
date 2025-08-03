@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 
 /* custom properties */
@@ -11,3 +13,15 @@
   --color-secondary-bg: #F7F7F7;
 
 }
+
+.section-container {
+    max-width: 1536px; /* equivalent to max-w-screen-2xl */
+    margin-left: auto; /* mx-auto */
+    margin-right: auto;
+    padding-left: 1.5rem; /* px-6 */
+    padding-right: 1.5rem;
+    padding-top: 1.5rem; /* py-6 */
+    padding-bottom: 1.5rem;
+}
+
+
