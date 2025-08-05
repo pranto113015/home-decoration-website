@@ -20,6 +20,10 @@ const Products = ({headline}) => {
           </div>
        </div>
 
+
+       {/* product grid */}
+       // next start here now time : 03.18.46s 
+
       </div>
     </div>
   )
