@@ -1,5 +1,6 @@
 import React from 'react'
 import {products} from '../utils/products';
+import ProductCard from './ProductCard';
 
 
 const Products = ({headline}) => {
@@ -28,7 +29,7 @@ const Products = ({headline}) => {
           products.map((product,index)=>(
             <div>
               {
-                <div>{product.name}</div>
+               <ProductCard key={index} product={product} />
               }
             </div>
           ))
