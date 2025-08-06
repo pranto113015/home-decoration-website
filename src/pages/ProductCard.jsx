@@ -1,6 +1,9 @@
 import React from 'react'
 import { getImgUrl } from '../utils/getImageURL';
 import Rating from './../components/Rating';
+import { FiPlusCircle } from "react-icons/fi";
+
+
 
 const ProductCard = ({product}) => {
   return (
@@ -15,6 +18,13 @@ const ProductCard = ({product}) => {
         <h4 className='text-base mb-1'>{product.category}</h4>
         <h3 className='font-semibold text-xl mb-2'>{product.name}</h3>
         <Rating  rating={product.rating}/>
+
+
+        {/* add to cart button */}
+        <div className='mt-5 flex justify-between items-center'>
+            <p className='text-secondary dark:text-white font-bold text-lg'><sub><span>${product.price}</span></sub></p>
+            <button className='bg-secondary hover:bg-black/65 text-white p-2 rounded-full'><FiPlusCircle /></button>
+        </div>
       </div>
     </div>
   )
