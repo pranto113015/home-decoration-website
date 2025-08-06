@@ -1,4 +1,5 @@
 import React from 'react'
+import {products} from '../utils/products';
 
 
 const Products = ({headline}) => {
@@ -21,7 +22,18 @@ const Products = ({headline}) => {
        </div>
 
 
-       {/* product grid */}
+       {/* products grid */}
+       <div>
+        {
+          products.map((product,index)=>(
+            <div>
+              {
+                <div>{product.name}</div>
+              }
+            </div>
+          ))
+        }
+       </div>
   
 
       </div>
