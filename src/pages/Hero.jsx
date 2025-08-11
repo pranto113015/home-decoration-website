@@ -1,5 +1,5 @@
 import React from "react";
-import bannerImg from "./../assets/banner.png";
+import bannerImg from "./../assets/banner.jpg";
 import { FaSearch } from "react-icons/fa";
 import Tooltipbutton from "../components/Tooltipbutton";
 
