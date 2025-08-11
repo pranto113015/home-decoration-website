@@ -24,4 +24,21 @@
     padding-bottom: 2.5rem;
 }
 
+/* Smaller, balanced Swiper arrows */
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 0.75rem;       
+  padding: 0.35rem 0.55rem; 
+  border-radius: 9999px;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 0 0 1px #E58411;
+  transition: background-color 0.2s, color 0.2s;
+}
 
+/* Hover effect */
+.swiper-button-prev:hover:after,
+.swiper-button-next:hover:after {
+  background-color: #E58411;
+  color: #fff;
+}
