@@ -1,49 +1,77 @@
-import React from 'react'
-import {products} from '../utils/products';
-import ProductCard from './ProductCard';
-import { useState } from 'react';
+import React from "react";
+import { products } from "../utils/products";
+import ProductCard from "./ProductCard";
+import { useState } from "react";
+import btnicon from "../assets/button-icon.png";
+
+const Products = ({ headline }) => {
+  const categories = ["Chair", "Beds", "Sofa", "Lamp"];
+  const [selectedCategory, setSelectedCategory] = useState("Chair");
+  const [visibleProducts, setVisibleProducts] = useState(4);
+  const filteredProducts = products.filter(
+    (product) => product.category === selectedCategory
+  );
 
 
-const Products = ({headline}) => {
-    const categories =["Chair","Beds","Sofa","Lamp"];
-    const [selectedCategory, setSelectedCategory] = useState("Chair");
-    const filteredProducts = products.filter((product)=> product.category === selectedCategory)
+  const loadMoreProducts = () => {
+    setVisibleProducts((pre) => pre + 4);
+  };
+
+
+
   return (
     <div>
-      <div className='section-container'>
-        <h2 className='text-4xl font-bold text-center my-8'>{headline}</h2>
-       
-       {/* category tabs */}
+      <div className="section-container">
+        <h2 className="text-4xl font-bold text-center my-8">{headline}</h2>
 
-       <div className='bg-[#EEEEEE] max-w-md mx-auto sm:rounded-full md:p-2 py-5 mb-16'>
-          <div className='flex flex-col sm:flex-row items-center md:justify-between justify-center gap-4'>
-              {
-                categories.map((category)=>(
-                    <button onClick={()=>{setSelectedCategory(category)}} key={category} className={`py-1.5 sm:px-5 px-8 rounded-full hover:bg-primary hover:text-white transition-colors ${selectedCategory === category ? 'bg-white text-primary' : 'text-secondary'}`}>{category}</button>
-                ))
-            }
+        {/* category tabs */}
+
+        <div className="bg-[#EEEEEE] max-w-md mx-auto sm:rounded-full md:p-2 py-5 mb-16">
+          <div className="flex flex-col sm:flex-row items-center md:justify-between justify-center gap-4">
+            {categories.map((category) => (
+              <button
+                onClick={() => {
+                  setSelectedCategory(category);
+                  setVisibleProducts(4);
+                }}
+                key={category}
+                className={`py-1.5 sm:px-5 px-8 rounded-full hover:bg-primary hover:text-white transition-colors ${
+                  selectedCategory === category
+                    ? "bg-white text-primary"
+                    : "text-secondary"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
           </div>
-       </div>
+        </div>
 
-
-       {/* products grid */}
-       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6'>
+        {/* products grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {filteredProducts.slice(0,visibleProducts).map((product, index) => (
+            <div key={index}>{<ProductCard product={product} />}</div>
+          ))}
+        </div>
+        
+        
+        {/* loeadmore button */}
         {
-          filteredProducts.map((product,index)=>(
-            <div key={index}>
-              {
-               <ProductCard  product={product} />
-              }
+          visibleProducts < filteredProducts.length && (
+            <div className="flex justify-center mt-9 ">
+              <button onClick={loadMoreProducts} className="text-base font-semibold text-primary flex item-center gap-1 ">
+                View More
+
+                <img src={btnicon} alt="button icon" />
+              </button>
             </div>
-          ))
+          )
         }
-       </div>
-  
+       
 
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Products
-
+export default Products;
