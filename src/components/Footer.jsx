@@ -88,6 +88,20 @@ const Footer = () => {
         </ul>
 </div>
       </div>
+
+
+      {/* copyright */}
+<div className="mt-12 section-container flex flex-col sm:flex-row sm:justify-between sm:items-center sm:text-center gap-4 text-left text-black dark:bg-gray-800 dark:text-white border-t border-gray-300 pt-4">
+  <p>© {new Date().getFullYear()} HATIL. All rights reserved.</p>
+
+  <div className="flex items-center gap-4">
+    <Link to='/' className='hover:text-primary'>Terms & Conditions</Link>
+    <Link to='/' className='hover:text-primary'>Privacy Policy</Link>
+    
+  </div>
+</div>
+
+
     </footer>
   );
 };
