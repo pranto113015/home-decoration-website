@@ -1,5 +1,5 @@
 import React from "react";
-import { FaF, FaFacebookF, FaTwitter } from "react-icons/fa6";
+import {  FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -81,7 +81,7 @@ const Footer = () => {
             </li>
             <li>
                 <Link to='/' className='hover:text-primary flex items-center space-x-2'>
-                  <FaTwitter /> <span>Twitter</span>
+                   <FaInstagram /> <span>Instagram</span>
                 </Link>
                 
             </li>
